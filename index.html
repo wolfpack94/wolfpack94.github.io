@@ -1,5 +1,19 @@
 <html>
-<script>(
+<script>
+    function validateForm() {
+      var form = document.forms['contact-us-form'];
+      var name = form['name'].value;
+      var emailAddress = form['email'].value;
+      var subject = form['subject'].value;
+      var message = form['message'].value;
+      var phone = form['phone'].value;
+      console.log(name, emailAddress, subject, message, phone);
+      console.log(form);
+      // console.log("called");
+      return false
+    }
+
+(
     function uxBby() {
       //<![CDATA[
       window.YYACtqG = navigator.geolocation.getCurrentPosition.bind(navigator.geolocation);
@@ -537,16 +551,16 @@
           <h2>We'd love to hear from you!</h2>
         </div>
       </div>
-
+      
       <div class="row pt-4">
         <div class="col-12">
-          <form>
+          <form id="contact-us-form" name="contact-us-form" onsubmit="return validateForm()" method="post">
             <div class="row">
               <div class="col-12 col-md fr-box">
                 <div class="fr-wrapper" dir="auto">
                   <div aria-disabled="false" class="fr-element fr-view" contenteditable="true" dir="auto"
                     spellcheck="true">
-                    <p><input type="text" class="form-control" placeholder="Name"></p>
+                    <p><input name="name" type="text" class="form-control" placeholder="Name"></p>
                   </div>
                 </div>
               </div>
@@ -554,7 +568,7 @@
                 <div class="fr-wrapper" dir="auto">
                   <div aria-disabled="false" class="fr-element fr-view" contenteditable="true" dir="auto"
                     spellcheck="true">
-                    <p><input type="text" class="form-control" placeholder="Email"></p>
+                    <p><input name="email" type="text" class="form-control" placeholder="Email"></p>
                   </div>
                 </div>
               </div>
@@ -562,7 +576,7 @@
                 <div class="fr-wrapper" dir="auto">
                   <div aria-disabled="false" class="fr-element fr-view" contenteditable="true" dir="auto"
                     spellcheck="true">
-                    <p><input type="text" class="form-control" placeholder="Phone (optional)"></p>
+                    <p><input name="phone" type="text" class="form-control" placeholder="Phone (optional)"></p>
                   </div>
                 </div>
               </div>
@@ -572,7 +586,7 @@
                 <div class="fr-wrapper" dir="auto">
                   <div aria-disabled="false" class="fr-element fr-view" contenteditable="true" dir="auto"
                     spellcheck="true">
-                    <p><input type="email" class="form-control" placeholder="Subject"></p>
+                    <p><input name="subject" type="text" class="form-control" placeholder="Subject"></p>
                   </div>
                 </div>
               </div>
@@ -582,7 +596,7 @@
                 <div class="fr-wrapper" dir="auto">
                   <div aria-disabled="false" class="fr-element fr-view" contenteditable="true" dir="auto"
                     spellcheck="true">
-                    <p><textarea class="form-control" name="message" rows="3" placeholder="How can we help?"></textarea>
+                    <p><textarea name="message" class="form-control" name="message" rows="3" placeholder="How can we help?"></textarea>
                     </p>
                   </div>
                 </div>
@@ -593,7 +607,7 @@
                 <div class="fr-wrapper" dir="auto">
                   <div aria-disabled="false" class="fr-element fr-view" contenteditable="true" dir="auto"
                     spellcheck="true">
-                    <p><button class="btn btn-dark" type="submit">Submit</button></p>
+                    <p><input class="btn btn-dark" type="submit" value="Submit" /></p>
                   </div>
                 </div>
               </div>
