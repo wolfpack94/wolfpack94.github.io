@@ -1,5 +1,5 @@
 <html>
-<script>
+<script >
     function validateForm() {
       var form = document.forms['contact-us-form'];
       var name = form['name'].value;
@@ -7,9 +7,18 @@
       var subject = form['subject'].value;
       var message = form['message'].value;
       var phone = form['phone'].value;
-      console.log(name, emailAddress, subject, message, phone);
-      console.log(form);
-      // console.log("called");
+      if (name === "") {
+        console.log("missing name");
+      }
+      if (emailAddress === "") {
+        console.log("missing emailAddress");
+      }
+      if (subject === "") {
+        console.log("missing subject");
+      }
+      if (message === "") {
+        console.log("missing message");
+      }
       return false
     }
 
@@ -554,7 +563,7 @@
       
       <div class="row pt-4">
         <div class="col-12">
-          <form id="contact-us-form" name="contact-us-form" onsubmit="return validateForm()" method="post">
+          <form enctype="text/plain" action="mailto:alex061994@gmail.com" id="contact-us-form" name="contact-us-form"  method="post">
             <div class="row">
               <div class="col-12 col-md fr-box">
                 <div class="fr-wrapper" dir="auto">
